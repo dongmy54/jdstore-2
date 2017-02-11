@@ -6,4 +6,11 @@ class CartsController < ApplicationController
         	redirect_to carts_path
 	end
 
+	def destroy
+		@cart = current_cart
+		if @cart.destroy
+			redirect_to carts_path
+		end
+	end
+
 end
